@@ -50,7 +50,8 @@ describe 'Openweather API test' do
     end
 
     # 9
-    
+
+
     # 10
     # 11
     # 12
