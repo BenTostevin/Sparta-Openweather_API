@@ -13,7 +13,7 @@ class SingleCityWeather
   end
 
   def get_response
-    @city = JSON.parse(self.class.get("q=London&appid=#{@api_key}").body)
+    @city = JSON.parse(self.class.get("q=Kawasaki&appid=#{@api_key}").body)
   end
 
   def print_result
@@ -24,7 +24,35 @@ class SingleCityWeather
     @city["weather"]
   end
 
+  def no_of_coords
+    @city["coord"].size
+  end
+
+  def get_longitude
+    @city["coord"]["lon"]
+  end
+
+  def get_latitude
+    @city["coord"]["lat"]
+  end
+
+  def get_id
+    @city["weather"][0]["id"]
+  end
+
+  def id_length
+    get_id.to_s.length
+  end
+
+  def get_sunrise
+    @city["sys"]["sunrise"]
+  end
+
+  def capitalize_name
+    @city["name"][0]
+  end
+
 end
 
-weather_test = SingleCityWeather.new
-weather_test.print_result
+# weather_test = SingleCityWeather.new
+# weather_test.print_result
