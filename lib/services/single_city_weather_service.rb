@@ -25,3 +25,6 @@ class SingleCityWeather
   end
 
 end
+
+weather_test = SingleCityWeather.new.get_response
+weather_test.get_weather

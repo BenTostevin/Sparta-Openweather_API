@@ -13,6 +13,8 @@ describe 'Openweather API test' do
       expect(@city.get_weather).to be_a Array
     end
 
+    
+
   end
 
 end
