@@ -21,7 +21,7 @@ end
 
 superClass = OpenweatherAPI.new
 
-city = superClass.historical_weather
+station = superClass.weather_station
 
-city.get_response
-city.print_result
+station.get_response
+station.print_result

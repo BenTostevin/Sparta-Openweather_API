@@ -101,6 +101,18 @@ class HistoricalWeather
     @city["message"]
   end
 
+  # def loop_test
+  #   i = 0
+  #   until i == 4 do
+  #     if i == 0
+  #       y = false
+  #     else
+  #       y = true
+  #     end
+  #     i += 1
+  #   end
+  #   y
+  # end
 
 
 end

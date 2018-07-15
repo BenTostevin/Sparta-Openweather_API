@@ -69,6 +69,10 @@ describe 'Openweather API test' do
       expect(@city.empty_message).to eq ""
     end
 
+    it 'loop' do
+      expect(@city.loop_test).to be true
+    end
+
   end
 
 end
