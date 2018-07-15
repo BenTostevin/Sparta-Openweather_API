@@ -13,7 +13,8 @@ class SingleCityWeather
   end
 
   def get_response
-    @city = JSON.parse(self.class.get("q=Kawasaki&appid=#{@api_key}").body)
+    @city_name = 'Kawasaki'
+    @city = JSON.parse(self.class.get("q=#{@city_name}&appid=#{@api_key}").body)
   end
 
   def print_result
@@ -22,6 +23,10 @@ class SingleCityWeather
 
   def get_weather
     @city["weather"]
+  end
+
+  def weather_length
+    get_weather.length
   end
 
   def no_of_coords
@@ -48,11 +53,28 @@ class SingleCityWeather
     @city["sys"]["sunrise"]
   end
 
-  def capitalize_name
-    @city["name"]
+  def compare_name
+    @city["name"] == @city_name
+  end
+
+  def country_name_length
+    @city["sys"]["country"].length
+  end
+
+  def get_description
+    @city["weather"][0]["description"]
+  end
+
+  def base_has
+    @city["base"]
+  end
+
+  def get_visibility
+    @city["visibility"]
+  end
+
+  def main_size
+    @city["main"].size
   end
 
 end
-
-# weather_test = SingleCityWeather.new
-# weather_test.print_result

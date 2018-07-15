@@ -50,14 +50,39 @@ describe 'Openweather API test' do
     end
 
     # 9
-
+    it 'should have weather as an array containing only one item' do
+      expect(@city.weather_length).to eq 1
+    end
 
     # 10
+    it 'should have it\'s name be the same as @city_name' do
+      expect(@city.compare_name).to be true
+    end
+
     # 11
+    it 'should have country name be 2 letters long' do
+      expect(@city.country_name_length).to eq 2
+    end
+
     # 12
+    it 'should have description as a string' do
+      expect(@city.get_description).to be_a String
+    end
+
     # 13
+    it 'should have the key base containing the value stations' do
+      expect(@city.base_has).to include("stations")
+    end
+
     # 14
+    it 'should have a visibility value of at most 10000' do
+      expect(@city.get_visibility).to be <= 10000
+    end
+
     # 15
+    it 'should have main as an array of exactly 5 keys' do
+      expect(@city.main_size).to eq 5
+    end
 
   end
 

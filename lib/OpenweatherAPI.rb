@@ -17,9 +17,11 @@ class OpenweatherAPI
   end
 end
 
+
+
 superClass = OpenweatherAPI.new
 
-city = superClass.single_city_weather
+city = superClass.historical_weather
 
 city.get_response
 city.print_result
