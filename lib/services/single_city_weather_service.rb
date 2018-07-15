@@ -49,7 +49,7 @@ class SingleCityWeather
   end
 
   def capitalize_name
-    @city["name"][0]
+    @city["name"]
   end
 
 end

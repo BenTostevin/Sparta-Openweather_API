@@ -1,4 +1,6 @@
 require_relative 'services/single_city_weather_service.rb'
+require_relative 'services/historical_weather_data.rb'
+require_relative 'services/weather_station.rb'
 
 class OpenweatherAPI
 
@@ -6,6 +8,13 @@ class OpenweatherAPI
     SingleCityWeather.new
   end
 
+  def historical_weather
+    HistoricalWeather.new
+  end
+
+  def weather_station
+    WeatherStation.new
+  end
 end
 
 superClass = OpenweatherAPI.new
