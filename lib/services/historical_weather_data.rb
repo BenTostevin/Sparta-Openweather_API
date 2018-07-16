@@ -5,12 +5,16 @@ class HistoricalWeather
 
   include HTTParty
 
+  base_uri 'https://samples.openweathermap.org/data/2.5/history/city?'
+
   def initialize
-    @api_key = '93bf8bc0841a2f8df65a1dd7a3642eb4'
+    @api_key = 'b1b15e88fa797225412429c1c50c122a1'
   end
 
   def get_response
-    @city = JSON.parse(self.class.get("https://samples.openweathermap.org/data/2.5/history/city?q=Chichester,UK&appid=b1b15e88fa797225412429c1c50c122a1").body)
+    @city = 'Chichester'
+    @country = 'UK'
+    @city = JSON.parse(self.class.get("q=#{@city},#{@country}&appid=#{@api_key}").body)
   end
 
   def print_result
@@ -100,19 +104,5 @@ class HistoricalWeather
   def empty_message
     @city["message"]
   end
-
-  # def loop_test
-  #   i = 0
-  #   until i == 4 do
-  #     if i == 0
-  #       y = false
-  #     else
-  #       y = true
-  #     end
-  #     i += 1
-  #   end
-  #   y
-  # end
-
 
 end

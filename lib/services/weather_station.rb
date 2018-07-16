@@ -5,12 +5,14 @@ class WeatherStation
 
   include HTTParty
 
-  # def initialize
-  #   @api_key = '93bf8bc0841a2f8df65a1dd7a3642eb4'
-  # end
+  base_uri 'https://samples.openweathermap.org/data/3.0/stations'
+
+  def initialize
+    @api_key = 'b1b15e88fa797225412429c1c50c122a1'
+  end
 
   def get_response
-    @station = JSON.parse(self.class.get("https://samples.openweathermap.org/data/3.0/stations?appid=b1b15e88fa797225412429c1c50c122a1").body)
+    @station = JSON.parse(self.class.get("?appid=#{@api_key}").body)
   end
 
   def print_result
@@ -76,7 +78,5 @@ class WeatherStation
   def compare_id_and_name
     @station["external_id"][0] == @station["name"][0]
   end
-
-
 
 end
