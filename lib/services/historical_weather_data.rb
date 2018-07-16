@@ -17,10 +17,6 @@ class HistoricalWeather
     @city = JSON.parse(self.class.get("q=#{@city},#{@country}&appid=#{@api_key}").body)
   end
 
-  def print_result
-    puts @city
-  end
-
   def get_list
     @city["list"]
   end

@@ -16,12 +16,3 @@ class OpenweatherAPI
     WeatherStation.new
   end
 end
-
-
-
-superClass = OpenweatherAPI.new
-
-station = superClass.weather_station
-
-station.get_response
-station.print_result

@@ -15,10 +15,6 @@ class WeatherStation
     @station = JSON.parse(self.class.get("?appid=#{@api_key}").body)
   end
 
-  def print_result
-    puts @station
-  end
-
   def get_id
     @station["id"]
   end

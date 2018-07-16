@@ -16,10 +16,6 @@ class SingleCityWeather
     @city = JSON.parse(self.class.get("q=#{@city_name}&appid=#{@api_key}").body)
   end
 
-  def print_result
-    puts @city
-  end
-
   def get_weather
     @city["weather"]
   end
